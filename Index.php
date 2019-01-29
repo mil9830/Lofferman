@@ -9,9 +9,7 @@
     <div class="headwrapper">
         <h1 id="main-title">Waynesburgh Barrel Series</h1>
         <nav class="main-nav">
-
-            <a href="#" class="mainbtn">Admin Login</a>
-            <a href="#" class="mainbtn">Contact</a>
+            <a href="Authentication.php" class="mainbtn">Admin Login</a>
         </nav>
     </div>
     <!-- END OF Nav bar for admin login and contact page-->

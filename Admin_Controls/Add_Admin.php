@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="AdminStyles.css" />
     <h1 id="wbsHead" >Waynesburgh Barrel Series</h1>
-    <h2 id="acHead">Admin Controls - Add Event</h2>
+    <h2 id="acHead">Admin Controls - Add Admin</h2>
 </head>
 <body>
 <!-- Start of the admin selection sidebar -->
