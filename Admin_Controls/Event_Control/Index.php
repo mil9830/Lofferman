@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+<?php
+$db_host = "localhost";
+$db_username = "vistor";
+$db_pass = "visitor";
+$db_name = "test";
+$db = new PDO('mysql:host='.$db_host.';dbname='.$db_name,$db_username,$db_pass);
+$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+$query = $db->query('SELECT * FROM pet');
+?>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -18,28 +26,18 @@
 <!-- End of the admin selection sidebar -->
 
 
-<!-- Start of the insert statements -->
+<!-- Start of the selection of events Table -->
 
-<!-- End of the insert statements -->
-
-
-<!-- Start of the Available Riders Table -->
-
-<!-- End of the Available Table -->
-
-
-<!-- Start of the Added Riders Table -->
-
-<!-- End of the Added Riders Table -->
+<!-- End of the selection of events Table -->
 
 
 <!-- Start of the data queries -->
 
 <!-- End of the data queries -->
 
-<!-- Start of the data queries -->
+<!-- Start of the Next nav -->
 <a href="Draw.php" class="Nextbtn">Next</a>
-<!-- End of the data queries -->
+<!-- End of the Next nav -->
 
 
 </body>

@@ -1,3 +1,12 @@
+<?php
+$db_host = "localhost";
+$db_username = "vistor";
+$db_pass = "visitor";
+$db_name = "test";
+$db = new PDO('mysql:host='.$db_host.';dbname='.$db_name,$db_username,$db_pass);
+$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+$query = $db->query('SELECT * FROM pet');
+?>
 <html class="home">
 <link rel="stylesheet" type="text/css" href="Style.css">
 
@@ -32,23 +41,67 @@
         </div>
         <!--END OF Table buttons-->
         <div class="grid-container">
-            <table>
-                <tr>
-
-
-                    <td>
-                        &nbsp;
-                    </td>
                     <!--Table data-->
                     <td>
-                        <div id="table1"> Content of 1 </div>
-                        <div id="table2"> Content of 2 </div>
-                        <div id="table3"> Content of 3 </div>
+                    <div id="table1"> 
+                        <hr>
+                    <table border = '2'>
+                    <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    </tr>
+
+                    <?php
+                    while ($row = $query->fetch()) 
+                    {
+                        echo "<tr>";
+                        echo "<td>" . $row['id'] ."</td>";
+                        echo "<td>" . $row['name'] . "</td>";
+                        echo "<td>" . $row['price'] . "</td>";
+                        echo "</tr>";
+                    }
+                    ?>
+                        
+                        
+                     </div>
+                        <div id="table2"> 
+                        <hr>
+                        <tr>
+                        <th>id</th>
+                        <th>name</th>
+                        </tr>
+
+                        <?php
+                        while ($row = $query->fetch()) 
+                        {
+                            echo "<tr>";
+                            echo "<td>" . $row['id'] ."</td>";
+                            echo "<td>" . $row['name'] . "</td>";
+                            echo "<td>" . $row['price'] . "</td>";
+                            echo "</tr>";
+                        }
+                        ?> </div>
+                        <div id="table3"> 
+                        <hr>
+                        <tr>
+                        <th>id</th>
+                        <th>name</th>
+                        </tr>
+
+                        <?php
+                        while ($row = $query->fetch()) 
+                        {
+                        echo "<tr>";
+                        echo "<td>" . $row['id'] ."</td>";
+                        echo "<td>" . $row['name'] . "</td>";
+                        echo "<td>" . $row['price'] . "</td>";
+                        echo "</tr>";
+                        }
+                        ?></div>`
                         <div id="table4"> Content of 4 </div>
-                    </td>
+                    
                     <!--END OF Table data-->
-                </tr>
-            </table>
+               
         </div>
         <!--END OF Table of races statistics-->
     </div>

@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+<?php
+$db_host = "localhost";
+$db_username = "vistor";
+$db_pass = "visitor";
+$db_name = "test";
+$db = new PDO('mysql:host='.$db_host.';dbname='.$db_name,$db_username,$db_pass);
+$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+$query = $db->query('SELECT * FROM pet');
+?> 
 <html>
 <head>
     <meta charset="utf-8" />

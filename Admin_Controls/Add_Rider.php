@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+<?php
+$db_host = "localhost";
+$db_username = "vistor";
+$db_pass = "visitor";
+$db_name = "test";
+$db = new PDO('mysql:host='.$db_host.';dbname='.$db_name,$db_username,$db_pass);
+$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+$query = $db->query('SELECT * FROM pet');
+?>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -27,14 +35,26 @@
 
 
 <!-- Start of the Table -->
+<hr>
+<table border = '2'>
+<tr>
+<th>id</th>
+<th>name</th>
+</tr>
 
+<?php
+while ($row = $query->fetch()) 
+{
+    echo "<tr>";
+    echo "<td>" . $row['id'] ."</td>";
+    echo "<td>" . $row['name'] . "</td>";
+    echo "<td>" . $row['price'] . "</td>";
+    echo "</tr>";
+}
+?>
 <!-- End of the Table -->
 
 
-<!-- Start of the data queries -->
-
-
-<!-- End of the data queries -->
 
 </body>
 </html>
