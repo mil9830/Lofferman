@@ -23,7 +23,7 @@ CREATE TABLE Events
 	Event_Name		VARCHAR(20)									,
 	Event_Type		VARCHAR(20)									,
 	Event_location	VARCHAR(20)									,
-	Event_date		DATE	
+	Event_date		DATETIME DEFAULT NULL										,
 	PRIMARY KEY (Event_ID)
 );
 
@@ -42,11 +42,11 @@ CREATE TABLE Rider_Events
 (
 	Rider_Event_ID		INT(20)		NOT NULL	AUTO_INCREMENT	,
 	Rider_Horse_Points	INT(100)								,
-	Timer_Data			TIME(7)									,
+	Timer_Data			TIME(6)									,
 	Pair_ID				INT			NOT NULL					,
 	Event_ID			INT			NOT NULL					,
-	PRIMARY KEY(Rider_Event_ID)
-	INDEX Pair_ID(Pair_ID)
+	PRIMARY KEY(Rider_Event_ID)									,
+	INDEX Pair_ID(Pair_ID)										,
 	INDEX Event_ID(Event_ID)
 );
 
@@ -61,7 +61,7 @@ CREATE TABLE Master_Sheet
 	Deduction			DECIMAL(4,2)							,
 	Balance_Due			DECIMAL(4,2)							,
 	Pair_ID				INT										,
-	PRIMARY KEY(Sheet_ID)
+	PRIMARY KEY(Sheet_ID)										,
 	INDEX(Pair_ID)
 );
 
@@ -89,9 +89,9 @@ INSERT INTO Horse (Horse_ID, Horse_Name) VALUES
 (9, 'Romeos Tax Refund')		,
 (10, 'Drifter')					;
 
-INSERT INTO Events (Event_ID, Event_Name, Event_Type, Event_location,  Event_date)
-(1, 'Fri Poles', 'Poles', 'Waynesburg', '2019-04-01 11:12:59')	,
-(2, 'Open 4D', 'Open 4D', 'Ohio', '2019-05-02 11:25:59')		;
+INSERT INTO Events (Event_ID, Event_Name, Event_Type, Event_location,  Event_date) VALUES
+(1, 'Fri Poles', 'Poles', 'Waynesburg', '2019-04-01 11:39:03')	,
+(2, 'Open 4D', 'Open 4D', 'Ohio', '2019-05-02 11:30:03')		;
 
 INSERT INTO Rider_Horse_Combination (Pair_ID,Rider_Id, Horse_ID) VALUES
 (1, 1, 1)						,
@@ -101,7 +101,6 @@ INSERT INTO Rider_Horse_Combination (Pair_ID,Rider_Id, Horse_ID) VALUES
 (5, 5, 7)						,
 (6, 7, 3)						,
 (7, 6, 6)						,
-(7, 7, 7)						,
 (8, 10, 9)						,
 (9, 8, 10)						,
 (10, 9, 8)						;
@@ -109,7 +108,7 @@ INSERT INTO Rider_Horse_Combination (Pair_ID,Rider_Id, Horse_ID) VALUES
 INSERT INTO Rider_Events (Rider_Event_ID, Rider_Horse_Points, Timer_Data, Pair_ID, Event_ID) VALUES
 
 (1, '20', '1:00', 1, 1)			,
-(2, '23', '0:56', 2, 2)			,
+(2, '23', '0:56', 2, 2)			,-
 (3, '14', '0:59', 3, 2)			,
 (4, '12', '1:02', 4, 1)			,
 (5, '17', '1:17', 5, 1)			,
