@@ -108,7 +108,7 @@ INSERT INTO Rider_Horse_Combination (Pair_ID,Rider_Id, Horse_ID) VALUES
 INSERT INTO Rider_Events (Rider_Event_ID, Rider_Horse_Points, Timer_Data, Pair_ID, Event_ID) VALUES
 
 (1, '20', '1:00', 1, 1)			,
-(2, '23', '0:56', 2, 2)			,-
+(2, '23', '0:56', 2, 2)			,
 (3, '14', '0:59', 3, 2)			,
 (4, '12', '1:02', 4, 1)			,
 (5, '17', '1:17', 5, 1)			,
@@ -120,7 +120,7 @@ INSERT INTO Rider_Events (Rider_Event_ID, Rider_Horse_Points, Timer_Data, Pair_I
 
 INSERT INTO Master_Sheet (Sheet_ID, Exhibition_Cost, Grounds_Fee, Stall_Cost, Amount_Hookups, Total_Due, Deduction, Balance_Due, Pair_ID) VALUES
 (1, '25.00', '15.00', '20.00', '10.00', '70.00', '20.00', '50.00', 1)		,
-(2, '10.00', '10.00', '20.00', '0.00', '40.00', '0.00', '40.00', 2)		,
+(2, '10.00', '10.00', '20.00', '0.00', '40.00', '0.00', '40.00', 2)			,
 (3, '10.00', '10.00', '20.00', '10.00', '50.00', '10.00', '40.00', 3)		,
 (4, '25.00', '15.00', '20.00', '10.00', '70.00', '20.00', '50.00', 4)		,
 (5, '25.00', '15.00', '20.00', '10.00', '70.00', '20.00', '50.00', 5)		,
